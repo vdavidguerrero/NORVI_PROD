@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
+
+
+Route::get('home/solicitud_personal', 'HomeController@solicitud_personal');
+Route::get('calculadora', 'HomeController@calculadora');
+Route::post('home/calcular', 'HomeController@calcular');
+Route::get('home/calcular', 'HomeController@calculadora');
+
+Auth::routes();
+Route::resource('loans','LoanController');
+
+Route::get('/home', 'HomeController@index')->name('home');
